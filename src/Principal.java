@@ -37,10 +37,11 @@ public class Principal {
                 case 1:
                     // Se Solicita al usuario la moneda de origen, la moneda de destino y la cantidad a convertir
                     System.out.println("Por favor, introduce la moneda de origen:");
-                    System.out.println("(Debes introducir el código de la moneda. Por ejemplo, 'USD' para dólares, 'EUR' para euro, 'PEN' para soles, etc.)");
+                    System.out.println("(Debes introducir el código de la moneda. Por ejemplo: 'USD' para dólares, 'EUR' para euro, 'PEN' para soles, etc.)");
                     String monedaOrigen = scanner.next();
 
                     System.out.println("Por favor, introduce la moneda de destino:");
+                    System.out.println("(Debes introducir el código de la moneda. Por ejemplo: 'USD' para dólares, 'EUR' para euro, 'PEN' para soles, etc.)");
                     String monedaDestino = scanner.next();
 
                     System.out.println("Por favor, introduce la cantidad a convertir:");
