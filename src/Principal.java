@@ -1,4 +1,6 @@
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.time.LocalDateTime;
@@ -11,6 +13,11 @@ public class Principal {
 
         // Se Crea una lista para almacenar el historial de conversiones
         ArrayList<String> historial = new ArrayList<>();
+
+        Map<String, String> mapaMonedas = new HashMap<>();
+        mapaMonedas.put("dolares", "USD");
+        mapaMonedas.put("euros", "EUR");
+// Agrega más monedas al mapa según sea necesario
 
         // Bucle infinito para mantener el programa en ejecución hasta que el usuario decida salir
         while (true) {
@@ -30,6 +37,7 @@ public class Principal {
                 case 1:
                     // Se Solicita al usuario la moneda de origen, la moneda de destino y la cantidad a convertir
                     System.out.println("Por favor, introduce la moneda de origen:");
+                    System.out.println("(Debes introducir el código de la moneda. Por ejemplo, 'USD' para dólares, 'EUR' para euro, 'PEN' para soles, etc.)");
                     String monedaOrigen = scanner.next();
 
                     System.out.println("Por favor, introduce la moneda de destino:");
@@ -40,10 +48,10 @@ public class Principal {
 
                     // Se convertira la cantidad de la moneda de origen a la moneda de destino
                     double resultado = conversor.convertirMoneda(monedaOrigen, monedaDestino, cantidad);
-                    System.out.println("El resultado de convertir " + cantidad + " " + monedaOrigen + " a " + monedaDestino + " es: " + resultado);
+                    System.out.println("El valor de " + cantidad + " " + monedaOrigen + " corresponde al valor final de =>> " + resultado + " " + monedaDestino);
 
                     // Se añadira la conversión al historial con una marca de tiempo real
-                    String registro = LocalDateTime.now() + ": Convertido " + cantidad + " " + monedaOrigen + " a " + monedaDestino + ". Resultado: " + resultado;
+                    String registro = LocalDateTime.now() + ": Convertido " + cantidad + " " + monedaOrigen + " a " + monedaDestino + ". Resultado: " + resultado + " " + monedaDestino;
                     historial.add(registro);
                     break;
                 case 2:
